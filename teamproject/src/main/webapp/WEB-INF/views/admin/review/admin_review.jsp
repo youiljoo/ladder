@@ -12,6 +12,14 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/mypage.css">
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<style>
+	.div-1{
+		padding : 25px;
+		margin: 0 auto;
+		display:block;
+		text-align : center;
+	}
+</style>
 </head>
 <body>
 	<!-- contents -->
@@ -88,36 +96,55 @@
 									</c:choose>
 								</c:forEach>
 							</table>
+							
+							<div class="div-1">				
+  <div class="search">
+    <select name="searchType" id="searchType">
+      <option value="p"<c:out value="${reviewList.searchType eq 'p' ? 'selected' : ''}"/>>상품명</option>    
+      <option value="c"<c:out value="${reviewList.searchType eq 'c' ? 'selected' : ''}"/>>내용</option> 
+      <option value="i"<c:out value="${reviewList.searchType eq 'i' ? 'selected' : ''}"/>>작성자</option>  
+   </select>
+
+    <input type="text" name="keyword" id="keywordInput" value="${reviewList.keyword}" placeholder="검색어를 입력하세요" />
+
+    <button id="searchBtn" type="button">검색</button>
+	<script>
+      $(function(){
+        $('#searchBtn').click(function() {
+          self.location = "admin_review.do" + '${paging.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+        });
+      });   
+    </script>   
+  </div>
+					
+	
+	
+	<div class="board_page">	
+		<ul class="paging">
+    		<c:if test="${paging.prev}">
+        		<span><a href="${contextPath}/admin_review.do?page=${paging.startPage-1}">이전</a></span>
+    		</c:if>
+    		<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+    		
+        		<span><a href="${contextPath}/admin_review.do?page=${num}">${num}</a></span>
+        		
+    		</c:forEach>
+    		<c:if test="${paging.next && paging.endPage>0}">
+        		<span><a href="${contextPath}/admin_review.do?page=${paging.endPage+1}">다음</a></span>
+    		</c:if>
+       </ul>
+       
+         </div>   
+                        	
+		</div>
+		
+
+							
+							
+							
 						</div>
 
-						<form role="form" method="get">
-
-							<div class="review_page">
-
-								<ul class="paging">
-
-									<c:if test="${paging.prev}">
-
-										<span><a
-											href="${contextPath}/admin_review.do?page=${paging.startPage-1}">이전</a></span>
-
-									</c:if>
-									<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
-										var="num">
-
-										<span><a
-											href="${contextPath}/admin_review.do?page=${num}">${num}</a></span>
-
-									</c:forEach>
-									<c:if test="${paging.next && paging.endPage>0}">
-
-										<span><a
-											href="${contextPath}/admin_review.do?page=${paging.endPage+1}">다음</a></span>
-
-									</c:if>
-								</ul>
-							</div>
-						</form>
+						
 					</div>
 				</main>
 			</div>

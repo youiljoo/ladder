@@ -182,7 +182,7 @@ public class AdminGoodsControllerImpl extends BaseController implements AdminGoo
 		        //String viewName=(String)request.getAttribute("viewName");
 		        List<Map<String, Object>> list = service.reviewList(scri);
 		        ModelAndView mav=new ModelAndView("admin_review");
-		   
+		        mav.addObject("reviewList", scri);
 		        mav.addObject("list", list);   
 		        mav.addObject("paging", paging);
 			
