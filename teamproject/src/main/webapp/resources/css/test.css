@@ -1,0 +1,447 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-center{display: flex; justify-content: center; align-items: center; }
+
+ul, li{
+    list-style: none;
+    
+}
+
+
+#h-b .nav {
+	width:40px;
+}
+.nav,
+.nav a,
+.nav ul,
+.nav li,
+.nav div,
+.nav form,
+.nav input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+ 
+.nav a { text-decoration: none; }
+ 
+.nav li { list-style: none;margin-top: 10px; }
+
+
+ 
+.nav {
+    display: inline-block;
+    position: relative;
+    cursor: default;
+    z-index: 500;
+}
+ 
+.nav > li {
+    display: block;
+    float: left;
+}
+ 
+.nav-line1{
+	height:250px;
+	width:1px;
+	background: #000000 ;
+	position: absolute;
+	left : 20%;
+	top : 10%;;
+} 
+.nav-line2{
+	height:250px;
+	width:1px;
+	background: #000000 ;
+	position: absolute;
+	left : 40%;
+	top : 10%;
+} 
+.nav-line3{
+	height:250px;
+	width:1px; 
+	background: #000000 ;
+	position: absolute;
+	left : 60%;
+	top : 10%;
+} 
+.nav-line4{
+	height:250px;
+	width:1px;
+	background: #000000 ;
+	position: absolute;
+	left : 80%;
+	top : 10%;
+}  
+.nav > li > a {
+	margin-left:15px;
+    position: relative; 
+    z-index: 510;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: #fcfcfc;
+    text-shadow: 0 0 1px rgba(0,0,0,.35);
+    /* background: #372f2b; */
+    /* border-left: 1px solid #4b4441; */
+    /* border-right: 1px solid #312a27; */
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+
+
+
+.nav > li:hover > a { background: #4b4441; }
+ 
+.nav > li:first-child > a {
+    border-radius: 3px 0 0 3px;
+    border-left: none;
+}
+
+.nav > li.nav-search > form {
+    position: relative;
+    width: inherit;
+    height: 54px;
+    z-index: 510;
+    border-left: 1px solid #4b4441;
+}
+
+.nav > li.nav-search input[type="text"] {
+    display: block;
+    float: left;
+    width: 1px;
+    height: 24px;
+    padding: 15px 0;
+    line-height: 24px;
+ 
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: #999999;
+    text-shadow: 0 0 1px rgba(0,0,0,.35);
+ 
+    background: #372f2b;
+ 
+    -webkit-transition: all .3s ease 1s;
+    -moz-transition: all .3s ease 1s;
+    -o-transition: all .3s ease 1s;
+    -ms-transition: all .3s ease 1s;
+    transition: all .3s ease 1s;
+}
+ 
+.nav > li.nav-search input[type="text"]:focus { color: #fcfcfc; }
+ 
+.nav > li.nav-search input[type="text"]:focus,
+.nav > li.nav-search:hover input[type="text"] {
+    width: 110px;
+    padding: 15px 20px;
+ 
+    -webkit-transition: all .3s ease .1s;
+    -moz-transition: all .3s ease .1s;
+    -o-transition: all .3s ease .1s;
+    -ms-transition: all .3s ease .1s;
+    transition: all .3s ease .1s;
+}
+
+.nav > li.nav-search input[type="submit"] {
+    display: block;
+    float: left;
+    width: 20px;
+    height: 54px;
+    padding: 0 25px;
+    cursor: pointer;
+ 
+    background: #372f2b url(../img/search-icon.png) no-repeat center 
+    center;
+ 
+    border-radius: 0 3px 3px 0;
+ 
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}
+ 
+.nav > li.nav-search input[type="submit"]:hover { background-color: 
+ #4b4441; }
+
+.nav > li > div {
+	background: #f8f8f8;
+	margin-top : 1px;
+    position: absolute;
+    display: block;
+    width: 1280px;
+    top: 50px;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    border-radius: 0 0 3px 3px;
+    border-left:1px solid #6666;  
+    border-right:1px solid #6666;  
+    border-bottom:1px solid #6666;  
+    -webkit-transition: all .3s ease .15s;
+    -moz-transition: all .3s ease .15s;
+    -o-transition: all .3s ease .15s;
+    -ms-transition: all .3s ease .15s;
+    transition: all .3s ease .15s;
+}
+
+.nav > li:hover > div {
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+}
+
+
+.nav .nav-column {
+    float: left;
+    width: 20%;
+    padding: 1% 2.5% 2.5% 2.5%
+}
+ 
+.nav .nav-column h3 {
+    margin: 20px 0px 15px 10px;  
+    line-height: 18px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #372f2b;
+    text-transform: uppercase;
+}
+ 
+.nav .nav-column h3.orange { color: #ff722b; }
+ 
+.nav .nav-column li a {
+    display: block;
+    line-height: 26px;
+ 
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: #888888;
+}
+ 
+.nav .nav-column li a:hover { color: #666666; }
+
+/* header ------------------------------------- */
+
+
+#header {
+    width:100% ;
+    height: 100%;
+     margin: 0 auto;
+     
+}
+#header #h-twrap{
+	 width: 100%;
+     margin: 0 auto;
+     align-items: center;
+     border-top : 1px solid #6666; border-bottom : 1px solid #6666;
+}
+
+#header #h-t{
+	 align-items: center;
+    width: 1280px;
+    height: 35px;
+    display: flex;
+    justify-content: end;
+    margin:  0  auto;
+}
+
+#header #h-t ul{
+    width: 400px;
+    height: 100%;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    
+}
+
+#header #h-t ul li{
+    width: 70px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#header #h-t ul li a{
+  text-align: center;
+  text-decoration: none; 
+  color: inherit; 
+}
+
+#header #h-m {
+    width: 1280px;
+    height: 100px;
+    display: flex;
+    margin: 0 auto;
+}
+
+#header #h-m #search  {
+	width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    margin-left: 20px;
+}
+
+#header #h-m #search form  {
+	width: 300px;
+    height: 100%;
+    display: flex;
+  
+}
+
+#header #h-m #search .main_input {
+ border-top : none; border-left : none; border-right : none;    margin-top : 40px; margin-bottom : 25px;  width : 250px; height : 30px;
+}
+#header #h-m #search .btn1 {
+	margin-top : 45px;
+	width: 20px;
+    height: 20px;
+   justify-content: center; align-items: center;
+
+}
+
+#header #h-m p{
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+#header #h-bwrap{
+	 width: 100%;
+     border-top : 1px solid #6666; border-bottom : 1px solid #6666;
+}
+#header #h-b {
+    width: 1280px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    
+   
+}
+
+
+
+#header #h-b .h-b_ul {
+	width: 600px;
+    height: 100%;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  
+}
+
+#header #h-b .h-b_ul a{
+text-align: center;
+   text-decoration: none;
+   color: inherit;
+}
+
+#header #h-b ul li a{
+	   
+
+	
+text-decoration: none; 
+	
+color: inherit; 
+}
+
+#header #h-b #b-right {
+   width : 1200px;
+   
+   float: right;
+}
+
+#header #h-b #b-right a{
+  	text-decoration: none; 
+  	color: inherit; 
+    align-items: center;
+    width : 100px;
+    height : 50px;
+	display: flex; 
+	align-items: center;
+	justify-content: center;
+	float: right;
+	
+}
+/*contents*/
+.myP_left {
+    float: left;
+    width: 220px;
+}
+.my_gnb {
+    margin-top: 25px;
+}
+.my_gnb .depth1 {
+    position: relative;
+    width: 100%;
+}
+.my_gnb .depth1 > a {
+    position: relative;
+    display: block;
+    padding: 17px 0;
+    width: 100%;
+    color: #1a1a1a; 
+    font-size: 18px;
+    font-family: Noto-M;
+	 text-decoration: none;
+}
+.my_gnb .depth1 > i {
+    position: absolute;
+    right: 0;
+    top: 25px;
+    display: block;
+    width: 14px;
+    height: 9px;
+    background: url(//image5.compuzone.co.kr/img/images/bsk/arrow_downB.png) center no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+.my_gnb .depth2 {
+    display: none;
+    padding: 5px 24px 28px;
+}
+
+.my_gnb .depth2 > ul > li {
+    margin-bottom: 8px;
+}
+.my_gnb .depth2 > ul > li > a {
+	 text-decoration: none;
+    color: #949494;
+    font-size: 16px;
+}
+
+.my_gnb .depth1:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #d8d8d8;
+}
+
+
+
+
+
