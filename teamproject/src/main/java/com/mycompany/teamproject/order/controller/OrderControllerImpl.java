@@ -52,9 +52,9 @@ public class OrderControllerImpl implements OrderController {
 		
 		List myOrderList=new ArrayList<OrderVO>();
 		myOrderList.add(orderVO);
-		String user_id = (String)session.getAttribute("user_id");
+		
 		MemberVO memberInfo=(MemberVO)session.getAttribute("memberInfo");
-		memberInfo.setUser_id(user_id);
+		
 		
 		session.setAttribute("myOrderList", myOrderList);
 		session.setAttribute("orderer", memberInfo);

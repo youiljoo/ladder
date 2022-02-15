@@ -109,7 +109,7 @@ order by g.productDate desc limit 4)  t
 		
 		<select id="selectReview" resultType="com.mycompany.teamproject.goods.vo.GoodsVO" parameterType="int">
 			<![CDATA[
-			select re_num, re_star, user_id,re_content,imageFileName,re_regdate from productreview where re_num=#{re_num}
+			select productName,re_num, re_star, user_id,re_content,imageFileName,re_regdate from productreview where re_num=#{re_num}
 			]]>
 		</select>
 		

@@ -56,18 +56,9 @@ public class MypageControllerImpl implements MypageController {
 	@RequestMapping(value="/mypage.do" ,method = RequestMethod.GET)
 	public ModelAndView mypageMain(CriteriaVO cri, HttpServletRequest request, HttpServletResponse response)  throws Exception {
 		HttpSession session = request.getSession();
-		String user = (String)session.getAttribute("user_id");
-		System.out.println("dd:" + user);
 		memberVO = (MemberVO)session.getAttribute("memberInfo");
-		if(user != "") {
-			memberVO.setUser_id("user_id");
-			String user_id = memberVO.getUser_id();
-			cri.setUser_id(user_id);
-		} else {
-			String user_id = memberVO.getUser_id();
-			cri.setUser_id(user_id);
-		}
-
+		String user_id = memberVO.getUser_id();
+		cri.setUser_id(user_id);
 		int myMain = mypageService.myMain(cri);
 		
 		PagingVO paging = new PagingVO();

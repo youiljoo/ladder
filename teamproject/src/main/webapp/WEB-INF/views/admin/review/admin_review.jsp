@@ -66,34 +66,13 @@
 										<th>작성자</th>										
 									</tr>
 								</thead>
-								<c:forEach items="${list}" var="list">
-									<c:choose>
-										<c:when test="${empty list}">
-											<tr height="10">
-												<td colspan="4">
-													<p align="center">
-														<b><span style="font-size: 9pt;">등록된 후기가 없습니다.</span></b>
-													</p>
-												</td>
-											</tr>
-										</c:when>
-
-
-
-										<c:when test="${list!=null}">
-
-
-
+								<c:forEach items="${list}" var="list" varStatus="p">
 											<tbody>
-												<tr>
-													<td><c:out value="${list.productName}"></c:out></td>
-													<td><a class='cls1'
-														href="${contextPath}/admin_review_re.do?re_num=${list.re_num}">${list.re_content}</a></td>
-													<td><c:out value="${list.user_id}"></c:out></td>													
+												<tr><td>${list.productName}</td>
+												<td><a class='cls1' href="${contextPath}/admin_review_re.do?re_num=${list.re_num}">${list.re_content}</a></td>
+												<td>${list.user_id}</td>													
 												</tr>
 											</tbody>
-										</c:when>
-									</c:choose>
 								</c:forEach>
 							</table>
 							

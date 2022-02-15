@@ -147,7 +147,7 @@
 		<select id="reviewList" resultType="hashmap" parameterType="hashmap">
         
             SELECT re_num, re_star, re_regdate, re_content, re_regdate, user_id, productName
-            FROM productreview 
+            FROM productreview <include refid="review_search"></include>
             ORDER BY re_num asc
             LIMIT #{pageStart}, #{perPageNum}
         	
@@ -155,10 +155,31 @@
 		
 		<select id="reviewListCnt" resultType="int">
         SELECT count(*)
-        FROM productreview
+        FROM productreview <include refid="review_search"></include>
         	       
 		</select>
 		
+		<sql id="review_search">
+  			<if test="searchType != null">
+  			<if test="searchType == 'p'.toString()">
+  			<![CDATA[
+  				where productName like concat('%', #{keyword}, '%')
+  			]]>
+  		</if>
+  		
+  		<if test="searchType == 'c'.toString()">
+  			<![CDATA[
+  				where re_content like concat('%', #{keyword}, '%')
+  			]]>
+  		</if>
+  		
+  		<if test="searchType == 'i'.toString()">
+  			<![CDATA[
+  				where user_id like concat('%', #{keyword}, '%')
+  			]]>
+  		</if>
+  	</if>
+  </sql>
 		
 		<!-- 후기 상세보기 -->
 		<select id="selectReview" resultType="com.mycompany.teamproject.goods.vo.GoodsVO" parameterType="int">
